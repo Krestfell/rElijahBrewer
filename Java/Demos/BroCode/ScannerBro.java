@@ -36,7 +36,7 @@ public class ScannerBro {
       int age = scanner.nextInt();
 
       // * ^ nexInt(): A method of java.util.Scanner class.
-      // Scans the next token of the input data as an “int”.
+      // Scans the next token of the input data as an int.
 
       scanner.nextLine();
 

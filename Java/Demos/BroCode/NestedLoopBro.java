@@ -1,4 +1,4 @@
-public class NestecLoopBro {
+public class NestedLoopBro {
 
     //Nested loop: a loop inside of a loop.
     public static void main(String[] args) {
