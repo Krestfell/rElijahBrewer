@@ -7,7 +7,7 @@ public class RandomBro {
         Random random = new Random();
         //The Random class is used to generate a stream of pseudorandom numbers.
 
-        int n = random.nextInt(20)+1;
+        int n = random.nextInt(9,99)+1;
         // Generates a random number between the set bounds.
 
         double r = random.nextDouble();

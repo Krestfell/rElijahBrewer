@@ -4,7 +4,7 @@ public class FanTest {
         Fan Fan1 = new Fan();
         Fan1.setSpeed(Fan.MED);
         Fan1.setFanOn(false);
-        Fan1.setLightOn(false);
+        Fan1.setLightOn(true);
  
         System.out.println(Fan1.toString());
      }

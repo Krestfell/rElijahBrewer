@@ -35,7 +35,7 @@ public class Forecast {
         return sky;
     }
 
-     //fahrenheitToCelsius method
+    // fahrenheitToCelsius method
     public double fahrenheitToCelsius() {
         temperature = temperature - 32;
         temperature = temperature * 5;
