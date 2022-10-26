@@ -1,3 +1,4 @@
+package broMain;
 import java.util.Scanner;
 
 public class LogicOpsBro {

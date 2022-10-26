@@ -4,9 +4,9 @@ SELECT
     invoices.invoice_total
 FROM
     vendors AS V
-JOIN
+LEFT JOIN
     invoices AS i
 ON
     v.vendor_id = i.vendor_id
 ORDER BY
-    vendor_name
+    vendor_name;

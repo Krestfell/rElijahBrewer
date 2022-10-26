@@ -1,3 +1,4 @@
+package broStatements;
 public class SwitchBro {
 
     // Switch allows a variable to be tested for equality against a list of values.

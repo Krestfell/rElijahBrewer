@@ -1,3 +1,4 @@
+package broMath;
 import java.util.Scanner;
 
 // Finding the hypotenuse of a triangle.

@@ -1,3 +1,4 @@
+package broMath;
 import java.util.Random;
 
 public class RandomBro {
