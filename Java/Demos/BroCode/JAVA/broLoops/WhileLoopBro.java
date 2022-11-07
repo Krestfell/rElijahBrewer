@@ -1,3 +1,4 @@
+package broLoops;
 import java.util.Scanner;
 
 public class WhileLoopBro {

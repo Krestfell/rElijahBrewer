@@ -1,3 +1,4 @@
+package broStatements;
 // Java user input scanner
 
 import java.util.Scanner;

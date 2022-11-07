@@ -1,4 +1,5 @@
-// To replace many of the same word, go to Edit > Replace.
+package broMain;
+
 
 public class MainBro {
     /**

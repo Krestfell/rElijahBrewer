@@ -1,3 +1,4 @@
+package broUI;
 // Simple GUI
 
 import javax.swing.JOptionPane;
@@ -15,14 +16,14 @@ public class BasicGUIBro {
     public static void main(String[] args) {
 
         String name = JOptionPane.showInputDialog("Enter a name");
-        // * showInputDialog: Shows a GUI dialog requesting input from the user.
+            // * showInputDialog: Shows a GUI dialog requesting input from the user.
 
         JOptionPane.showMessageDialog(null, "Hello, " + name);
-        // * showMessageDialog: Shows a GUI dialog message.
+            // * showMessageDialog: Shows a GUI dialog message.
 
         int age = Integer.parseInt(JOptionPane.showInputDialog("Enter age"));
-        // ! an int variable cannot return a string value (without a parseInt function).
-        // * The parseInt function will convert the string an to integer.
+            // ! an int variable cannot return a string value (without a parseInt function).
+            // * The parseInt function will convert the string an to integer.
 
         JOptionPane.showMessageDialog(null, "You are " + age + " years old.");
 
