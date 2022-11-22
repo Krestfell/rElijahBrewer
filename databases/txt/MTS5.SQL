@@ -3,15 +3,15 @@ SELECT
     customers.customer_first_name,
     employees.last_name,
     employees.first_name,
-    CONCAT (managers.last_name, ", ", managers.first_name) as manager_name
+    CONCAT (managers.last_name, " ", managers.first_name) AS manager_name
 FROM
     employees
-JOIN
+    JOIN
     employees AS managers
-ON
+    ON
     employees.manager_id = managers.employee_id
-JOIN
+    JOIN
     customers
-ON
+    ON
     employees.last_name = customers.customer_last_name AND
-    customers.first_name = customers.customer_first_name
+        customers.first_name = customers.customer_first_name
