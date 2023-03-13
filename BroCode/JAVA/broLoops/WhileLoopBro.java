@@ -1,11 +1,12 @@
 package broLoops;
+
 import java.util.Scanner;
 
 public class WhileLoopBro {
 
     // While loop: executes a block of code as long as it's condition is true.
     public static void main(String[] args) {
-        
+
         Scanner scanner = new Scanner(System.in);
         String name = "";
 

@@ -21,7 +21,7 @@ public class NestedLoopBro {
 
         for (int i = 1; i <= rows; i++) {
             System.out.println();
-            //Outer loop is in charge of rows
+            // Outer loop is in charge of rows
 
             for (int j = 1; j <= columns; j++) {
                 System.out.print(symbol);
