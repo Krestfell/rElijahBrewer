@@ -1,0 +1,134 @@
+[gd_scene load_steps=24 format=3 uid="uid://cikyht344ftav"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_5nvmm"]
+[ext_resource type="Texture2D" uid="uid://d2klxakttyvsk" path="res://Sunny-land-assets-files/PNG/spritesheets/player-hurt.png" id="2_if14a"]
+[ext_resource type="Texture2D" uid="uid://58pbj6kaeqdb" path="res://Sunny-land-assets-files/PNG/sprites/player/idle/player-idle-1.png" id="3_5h2g7"]
+[ext_resource type="Texture2D" uid="uid://3805fmw3f7f6" path="res://Sunny-land-assets-files/PNG/sprites/player/idle/player-idle-2.png" id="4_i0uy5"]
+[ext_resource type="Texture2D" uid="uid://b3mh2tj7m02uh" path="res://Sunny-land-assets-files/PNG/sprites/player/idle/player-idle-3.png" id="5_k31p6"]
+[ext_resource type="Texture2D" uid="uid://ox2ximu0xvmj" path="res://Sunny-land-assets-files/PNG/sprites/player/idle/player-idle-4.png" id="6_fd56q"]
+[ext_resource type="Texture2D" uid="uid://k7gs7e1q2iv0" path="res://Sunny-land-assets-files/PNG/sprites/player/jump/player-jump-1.png" id="7_undyl"]
+[ext_resource type="Texture2D" uid="uid://k4ru6llqa6rs" path="res://Sunny-land-assets-files/PNG/sprites/player/jump/player-jump-2.png" id="8_cdjeh"]
+[ext_resource type="Texture2D" uid="uid://cde5w7ax8xvdb" path="res://Sunny-land-assets-files/PNG/sprites/player/run/player-run-1.png" id="9_yl33m"]
+[ext_resource type="Texture2D" uid="uid://bsgq0ohgl6d0w" path="res://Sunny-land-assets-files/PNG/sprites/player/run/player-run-2.png" id="10_21ocv"]
+[ext_resource type="Texture2D" uid="uid://4euxihjuuoef" path="res://Sunny-land-assets-files/PNG/sprites/player/run/player-run-3.png" id="11_d0bij"]
+[ext_resource type="Texture2D" uid="uid://2mk1kxd50tkb" path="res://Sunny-land-assets-files/PNG/sprites/player/run/player-run-4.png" id="12_kpg4l"]
+[ext_resource type="Texture2D" uid="uid://dt5436svjapkh" path="res://Sunny-land-assets-files/PNG/sprites/player/run/player-run-5.png" id="13_ai6lh"]
+[ext_resource type="Texture2D" uid="uid://dluq8him1q3vv" path="res://Sunny-land-assets-files/PNG/sprites/player/run/player-run-6.png" id="14_qfnum"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ivnkn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fgyy"]
+atlas = ExtResource("2_if14a")
+region = Rect2(0, 0, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cg2ce"]
+atlas = ExtResource("2_if14a")
+region = Rect2(33, 0, 33, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m2v36"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4fgyy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cg2ce")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_5h2g7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_i0uy5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_k31p6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fd56q")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_undyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cdjeh")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_yl33m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_21ocv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_d0bij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_kpg4l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ai6lh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_qfnum")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_rr4qd"]
+resource_name = "Idle"
+
+[sub_resource type="Animation" id="Animation_ft33c"]
+resource_name = "Run"
+
+[sub_resource type="Animation" id="Animation_42hup"]
+resource_name = "Jump"
+
+[sub_resource type="Animation" id="Animation_c1ij6"]
+resource_name = "Death"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sv436"]
+_data = {
+"Death": SubResource("Animation_c1ij6"),
+"Idle": SubResource("Animation_rr4qd"),
+"Jump": SubResource("Animation_42hup"),
+"Run": SubResource("Animation_ft33c")
+}
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_5nvmm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("CapsuleShape2D_ivnkn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+position = Vector2(0, -3)
+sprite_frames = SubResource("SpriteFrames_m2v36")
+animation = &"death"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.6, 1.6)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_sv436")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+anim_player = NodePath("../AnimationPlayer")
